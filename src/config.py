@@ -2,6 +2,8 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
+    MODE: str = "dev"  # dev, test, prod
+
     DATABASE_URL: str
     SECRET_KEY: str
     ALGORITHM: str
