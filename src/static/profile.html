@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人資料</title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/signin-signup.css">
+</head>
+<body>
+  <header>
+    <div class="navbar-container">
+      <div class="navbar">
+        <div class="headline">
+          <div>Ticket94</div>
+        </div>
+        <div class="menu">
+          <div id="signin-link" class="menu-item">會員登入</div>
+          <div id="profile-dropdown" class="menu-item profile-dropdown" style="display: none;">
+            會員中心
+            <div class="dropdown-content" style="display: none;">
+              <a href="/profile">個人資料</a>
+              <a href="/history">訂單查詢</a>
+            </div>
+          </div>
+          <div id="logout-link" class="menu-item" style="display: none;">會員登出</div>
+        </div>
+      </div>     
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <h2>個人資料</h2>
+      <div id="profile-info">
+        <p>姓名: <span id="member-name"></span></p>
+        <p>電子郵件: <span id="member-email"></span></p>
+        <p>手機號碼: <input type="text" id="member-phone" required></p>
+        <button id="update-phone-button">更新手機號碼</button>
+      </div>
+
+      <div id="password-section">
+        <h2>更改密碼</h2>
+        <form id="update-password-form">
+          <p>當前密碼: <input type="password" id="current-password" required></p>
+          <p>新密碼: <input type="password" id="new-password" required></p>
+          <button id="update-password-button">更新密碼</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-text">- ticket just for fun -</div>
+  </footer>
+  <div id="toast" class="toast"></div>
+  <script type="module" src="/scripts/profile.js"></script>
+  <script type="module" src="/scripts/signin-signup.js" defer></script>
+</body>
+</html>

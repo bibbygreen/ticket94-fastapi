@@ -1,0 +1,162 @@
+*{
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#summary-container .member-profile-container{
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+}
+
+.member-profile-container{
+  border: 1px solid #ddd;
+  background-color: #f4f4f4;
+  padding: 10px;
+}
+
+.member-profile-text{
+  font-size: 16px;
+  padding: 5px;
+}
+
+.table-title{
+  width: 180px;
+}
+h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #f4f4f4;
+}
+
+tfoot {
+  font-weight: bold;
+  background-color: #f4f4f4;
+}
+
+tfoot td {
+  border-top: 2px solid #ddd;
+}
+
+.tpfield {
+  height: 40px;
+  width: 300px;
+  border: 1px solid #CCCCCC;
+  margin: 5px 0;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.credit-card-info{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.credit-card-info-container{
+  width: 1000px;
+  margin: 10px 10px;
+}
+
+.credit-card-info-title{
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.credit-card-info-container input{
+  width: 200px;
+  height: 40px;
+  padding: 7px;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+}
+
+.credit-card-info-box{
+  display: flex;
+  vertical-align: middle;
+}
+.credit-card-info-box p{
+  height: 30px;
+  vertical-align: middle;
+  margin-top: 12px;
+}
+
+.div-button{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.cancel-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fdfdfd;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
+  margin-right: 5px;
+}
+
+.confirm-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0bad54;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.confirm-button:hover {
+  background-color: #078841;
+}
+
+.cancel-button:hover {
+  background-color: #b8b8b8;
+}
+
+.timer-container{
+  max-width: 1200px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  background: #c11b1b;
+  color: #fff;
+  padding: 7px 8px;
+}

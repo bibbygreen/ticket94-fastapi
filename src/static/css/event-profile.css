@@ -1,0 +1,38 @@
+.event-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.event-image {
+  /* flex: 1; */
+  display: flex;
+  justify-content: center;
+  /* padding: 10px; */
+  margin: 0px 20px;
+
+}
+
+.event-image img {
+  /* width: 100%; */
+  height: auto;
+  max-width: 300px;
+  margin-left: 50px;
+}
+
+.event-details {
+  flex: 2;
+  padding: 10px;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.event-details h2{
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.event-details p{
+  padding-bottom: 10px;
+}

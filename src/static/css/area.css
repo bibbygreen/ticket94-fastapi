@@ -1,0 +1,280 @@
+* {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  margin-top: 30px;
+}
+
+.area-selection {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.area-diagram {
+  flex: 1;
+  padding: 10px;
+}
+
+.area-diagram img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+}
+
+.area-options {
+  flex: 1;
+  padding: 10px;
+  text-align: left;
+}
+
+.area {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.area:hover {
+  background-color: #f0f0f0;
+}
+
+.area.selected {
+  /* background-color: #007bff; */
+  font-weight: bold;
+  border: 5px solid #6939b7e2;
+}
+
+.selection-options {
+  margin: 20px 0;
+}
+
+.selected-area {
+  margin: 20px 0;
+  font-family: Arial, sans-serif; 
+}
+
+.selected-area h2 {
+  font-size: 24px; 
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* .selection-options{
+  display: flex;
+  justify-content: center;
+} */
+.selection-options {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center horizontally */
+  gap: 10px; /* Space between items (optional) */
+}
+
+.selection-options label {
+  display: block;
+  align-items: center; /* Vertically center the radio button and text */
+}
+
+.selection-options{
+  text-align: center;
+}
+
+.ticket-options{
+  text-align: center;
+}
+
+.ticket-options h2{
+  margin-bottom: 20px;
+}
+
+.selection-label{
+  display: flex;
+}
+
+.selection-label label{
+  margin-right: 25px;
+  font-size: 18px;
+}
+
+.ticket-options label {
+  font-size: 18px; 
+  margin-right: 10px;
+}
+
+.ticket-options select {
+  font-size: 20px; 
+  /* padding: 10px; */
+  width: 60px;
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+#seat-diagram-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.seat-diagram-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+  overflow-x: auto;
+  text-align: center;
+}
+
+/* 自定義滾動條樣式 */
+.seat-diagram-content::-webkit-scrollbar {
+  width: 10px; /* 滾動條的寬度 */
+}
+
+.seat-diagram-content::-webkit-scrollbar-thumb {
+  background-color: #888; /* 滾動條的滑塊顏色 */
+  border-radius: 10px; /* 滾動條滑塊的圓角效果 */
+}
+
+.seat-diagram-content::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* 滑塊在懸停時的顏色 */
+}
+
+.seat-diagram-content::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* 滾動條的軌道顏色 */
+  border-radius: 10px; /* 滾動條軌道的圓角效果 */
+}
+
+.seat-diagram-content h2 {
+  margin-bottom: 10px;
+}
+
+#seat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.row {
+  display: flex;
+  gap: 5px;
+  font-size: 15px;
+}
+
+.seat {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 2px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid #ccc;
+  cursor: pointer; /* Add cursor style */
+}
+
+.seat.available {
+  background-color: #fff; /* 可用座位為白色背景 */
+}
+
+.seat.reserved, .seat.temp-held {
+  background-color: #ccc; /* 已預訂或暫時保留座位為灰色背景 */
+  cursor: not-allowed; /* 禁用鼠標點擊 */
+}
+
+.seat.selected {
+  background-color: blue;
+  color: white;
+}
+
+button:focus {
+  outline: none;
+}
+
+.confirm-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 3px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #0bad54;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.confirm-button:hover {
+  background-color: #078841;
+}
+
+/* Close Button */
+.close-modal {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin: 2px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 1px solid #d4d4d4;
+  background-color: #d9534f;
+  color: white;
+}
+
+.close-modal:hover {
+  background-color: #c9302c;
+}
+
+/* Clear Selection Button */
+.clear-selection-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin: 2px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 1px solid #d4d4d4;
+  background-color: white;
+}
+
+.clear-selection-button:hover {
+  background-color: #d7d7d7;
+}
+
+/* Confirm Button */
+.seat-confirm-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin: 2px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 1px solid #d4d4d4;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.seat-confirm-button:hover {
+  background-color: #47a447;
+}

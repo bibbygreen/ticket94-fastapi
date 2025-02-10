@@ -9,7 +9,9 @@ from src.config import settings
 if settings.DEBUG_MODE:
     engine = create_engine(settings.DATABASE_URL, echo=True)
 else:
-    engine = create_engine(settings.DATABASE_URL, pool_size=100, max_overflow=50, pool_recycle=300)
+    engine = create_engine(
+        settings.DATABASE_URL, pool_size=100, max_overflow=50, pool_recycle=300
+    )
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 

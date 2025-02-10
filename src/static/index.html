@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Ticket94</title>
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/signin-signup.css">
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'></link>
+
+</head>
+<body>
+  <header>
+    <div class="navbar-container">
+      <div class="navbar">
+        <div class="headline">
+          <div>Ticket94</div>
+        </div>
+        <div class="menu">
+          <div id="signin-link" class="menu-item">會員登入</div>
+          <div id="profile-dropdown" class="menu-item profile-dropdown" style="display: none;">
+            會員中心
+            <div class="dropdown-content" style="display: none;">
+              <a href="/profile">個人資料</a>
+              <a href="/history">訂單查詢</a>
+            </div>
+          </div>
+          <div id="logout-link" class="menu-item" style="display: none;">會員登出</div>
+        </div>
+      </div>     
+    </div>
+  </header>
+  
+  <section class="section-profile">
+    <div class="profile-container">
+      <div class="profile-img" id="slide">
+        <div class="btn-block">
+          <img src="/pics/NB-left-arrow.png" id="btn-left" alt="Left Arrow">
+          <img src="/pics/NB-right-arrow.png" id="btn-right" alt="Right Arrow">
+        </div>
+      </div>
+      <div class="dots"></div>
+    </div>
+  </section>
+  
+  
+  <hr>
+  <div class="news-container">
+    <div class="latest-news">
+        <h2>活動公告</h2>
+        <div class="news-item">
+            <h3>本網站註冊會員時不會要求預先填寫信用卡資料</h3>
+            <p>本網站註冊會員時不會要求預先填寫信用卡資料，請不要被任何廣告網站誤導，如對任何刷卡交易有所疑慮，請聯繫您的發卡銀行確認。</p>
+        </div>
+    </div>
+
+    <div class="title-tabs">
+      <div class="title">近期展演活動</div>
+      <div class="tabs">
+        <div id="show-all" class="tab div-button show-all-button active">顯示全部</div>
+        <div id="show-popular" class="tab div-button">熱門活動</div>
+        <div id="show-upcoming" class="tab div-button">最新開賣</div>
+      </div>
+    </div>
+
+    <div class="tab-content">
+        <div class="events-container">
+        </div>
+    </div>
+  </div>
+  
+  <footer class="footer">
+    <div class="footer-text">- ticket just for fun -</div>
+  </footer>
+  <div id="toast" class="toast"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
+  <script type="module" src="/scripts/index.js"></script>
+  <script type="module" src="/scripts/signin-signup.js" defer></script>
+</body>
+</html>

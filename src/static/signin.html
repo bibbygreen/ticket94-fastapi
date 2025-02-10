@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入 - Ticket94</title>
+    <link rel="stylesheet" href="/css/signin-signup.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+</head>
+<body>
+  <header>
+    <div class="navbar-container">
+      <div class="navbar">
+        <div class="headline">
+          <div>Ticket94</div>
+        </div>
+        <div class="menu">
+          <div id="signin-link" class="menu-item">會員登入</div>
+          <div id="profile-link" class="menu-item" style="display: none;">會員中心</div>
+          <div id="logout-link" class="menu-item" style="display: none;">會員登出</div>
+        </div>
+      </div>     
+    </div>
+  </header>
+
+  <div class="background-container">
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-tabs">
+                <button id="signin-tab" class="active">登入</button>
+                <button id="signup-tab" onclick="window.location.href='/signup';">註冊</button>
+            </div>
+            <div id="signin-form" class="auth-form active">
+                <form action="/api/user/auth" method="PUT" id="signInForm" class="form-container active">
+                    <div class="form-group">
+                        <label for="signin-email">Email</label>
+                        <input type="email" id="signin-email" name="email" placeholder="輸入電子信箱" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signin-password">密碼</label>
+                        <input type="password" id="signin-password" name="password" placeholder="輸入密碼" required>
+                    </div>
+                    <button type="submit" class="auth-button">登入</button>
+                    <hr>
+                    <p class="signin-notes">*若你還沒有使用過 Ticket94 的服務，請點上方「註冊」頁，使用 Email 註冊帳號。</p>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-text">- ticket just for fun -</div>
+  </footer>
+  <div id="toast" class="toast"></div>
+  <script type="module" src="/scripts/signin-signup.js" defer></script>
+</body>
+</html>
