@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="/css/checkout.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/progress.css">
+    <link rel="stylesheet" href="/css/event-profile.css">
+    <link rel="stylesheet" href="/css/signin-signup.css">
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="navbar-container">
+      <div class="navbar">
+        <div class="headline">
+          <div>Ticket94</div>
+        </div>
+        <div class="menu">
+          <div id="signin-link" class="menu-item">會員登入</div>
+          <div id="profile-dropdown" class="menu-item profile-dropdown" style="display: none;">
+            會員中心
+            <div class="dropdown-content" style="display: none;">
+              <a href="/profile">個人資料</a>
+              <a href="/history">訂單查詢</a>
+            </div>
+          </div>
+          <div id="logout-link" class="menu-item" style="display: none;">會員登出</div>
+        </div>
+      </div>     
+    </div>
+  </header>
+
+  <div class="timer-container">
+    <div class="timer">您的訂單已保留，請在 <span id="timer">--:--</span> 內完成付款，若超過時限，系統將自動取消訂單</div>
+  </div>
+
+  <main>
+    <div class="container">
+      <div class="purchaseProgress">
+        <div class="progress-track">
+            <div class="progress-fill"></div>
+        </div>
+        <div class="progress-step active" data-step="1">選擇票區</div>
+        <div class="progress-step" data-step="2">確認資料</div>
+        <div class="progress-step" data-step="3">付款結帳</div>
+        <div class="progress-step" data-step="4">購票完成</div>
+      </div>
+
+      <section class="event-profile">
+        <div class="event-image">
+          <img src="" alt="Event Image">
+        </div>
+        <div class="event-details">
+          <h2></h2>
+          <p>日期: </p>
+          <p>時間: </p>
+          <p>地點: </p>
+        </div>
+      </section>
+
+      <section id="summary-container">
+        <!-- Summary table will be inserted here -->
+      </section>
+
+      <section>
+        <h2>訂購人資料</h2>
+        <table id="member-table" class="member-profile-text">
+          <tr>
+            <td class="table-title">會員姓名</td>
+            <td id="member-name"></td>
+          </tr>
+          <tr>
+            <td class="table-title">電子郵件</td>
+            <td id="member-email"></td>
+          </tr>
+          <tr>
+            <td class="table-title">連絡電話</td>
+            <td id="member-phone"></td>
+          </tr>
+        </table>
+      </section>
+
+      <section class="payment-methods">
+        <h2>請選擇付款方式</h2>
+        <div class="payment-option">
+          <label>
+            <input type="radio" name="payment-method" value="credit-card"> 信用卡付款（Credit Card）
+          </label>
+          <div class="payment-description">
+            <p>1. 僅限VISA、Mastercard、JCB，無法使用美國運通、大來卡、銀聯卡。</p>
+            <p>2. 刷卡資料送出後，不論在銀行端刷卡頁面中，所顯示的異常訊息為何，請務必回到本系統網站，點選【訂單查詢】，刷卡成功與否，以【訂單狀態】顯示內容為準。</p>
+          </div>
+        </div>
+        <div class="payment-option">
+          <label>
+            <input type="radio" name="payment-method" value="ibon"> 7-11 ibon付款（Cash Payment - ibon）
+          </label>
+          <div class="payment-description">
+            <p>1. 本系統會產生一組專屬於這筆訂單的ibon付款取票資訊，請於訂單完成20分鐘後，至【訂單查詢】中查看相關資訊。</p>
+            <p>2. 請在本系統顯示的【繳款期限】時間內，至全台7-11店內的ibon機台自行列印付款繳費單，並至該店櫃檯付款及取票。若逾期未付款，ibon付款取票資訊即失效不再存在，訂單將取消不予以保留。</p>
+          </div>
+        </div>
+      </section>
+
+
+
+      <div class="div-button">
+        <button id="cancel-button" class="cancel-button">取消購票</button>
+        <button class="confirm-button">我同意本節目規則，下一步</button>
+      </div>
+      
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-text">- ticket just for fun -</div>
+  </footer>
+  <div id="toast" class="toast"></div>
+  <script type="module" src="/scripts/checkout.js"></script>
+  <script type="module" src="/scripts/fetchEvent.js"></script>
+  <script type="module" src="/scripts/signin-signup.js" defer></script>
+</body>
+</html>

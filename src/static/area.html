@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Ticket Selection</title>
+    <link rel="stylesheet" href="/css/area.css">
+    <link rel="stylesheet" href="/css/navbar.css">    
+    <link rel="stylesheet" href="/css/progress.css">
+    <link rel="stylesheet" href="/css/event-profile.css">
+    <link rel="stylesheet" href="/css/signin-signup.css">
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="navbar-container">
+      <div class="navbar">
+        <div class="headline">
+          <div>Ticket94</div>
+        </div>
+        <div class="menu">
+          <div id="signin-link" class="menu-item">會員登入</div>
+          <div id="profile-dropdown" class="menu-item profile-dropdown" style="display: none;">
+            會員中心
+            <div class="dropdown-content" style="display: none;">
+              <a href="/profile">個人資料</a>
+              <a href="/history">訂單查詢</a>
+            </div>
+          </div>
+          <div id="logout-link" class="menu-item" style="display: none;">會員登出</div>
+        </div>
+      </div>     
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="purchaseProgress">
+        <div class="progress-track">
+            <div class="progress-fill"></div>
+        </div>
+        <div class="progress-step active" data-step="1">選擇票區</div>
+        <div class="progress-step" data-step="2">確認資料</div>
+        <div class="progress-step" data-step="3">付款結帳</div>
+        <div class="progress-step" data-step="4">購票完成</div>
+      </div>
+
+      <section class="event-profile">
+        <div class="event-image">
+          <img src="" alt="Event Image">
+        </div>
+        <div class="event-details">
+          <h2></h2>
+          <p>日期: </p>
+          <p>時間: </p>
+          <p>地點: </p>
+        </div>
+      </section>
+
+      <section class="area-selection">
+        <div class="area-diagram">
+          <img src="/pics/seat-diagram.jpg" alt="Seating Diagram">
+        </div>
+        <div class="area-options">
+          <h2>票區一覽</h2>
+          <!-- 動態票區 -->
+        </div>
+      </section>
+      
+
+      <!-- <section class="area-selection">
+        <div class="area-diagram">
+          <img src="/pics/seat-diagram.jpg" alt="Seating Diagram">
+        </div>
+        <div class="area-options">
+          <h2>票區一覽</h2>
+          <div class="area" data-area="A">
+            <span class="area-name">A區</span>
+            <span class="area-price">NT 3,000元</span>
+          </div>
+        </div>
+      </section> -->
+
+      <section class="ticket-selection">
+        <div class="selection-options">
+          
+          <!-- <div class="selection-label">
+            <label><input type="radio" name="seat-selection" value="manual"> 自行選位</label>
+            <label><input type="radio" name="seat-selection" value="auto"> 電腦配位</label>
+          </div> -->
+          
+        </div>
+        <div class="ticket-options" id="ticket-options">
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-text">- ticket just for fun -</div>
+  </footer>
+  <div id="toast" class="toast"></div>
+  <script type="module" src="/scripts/area.js"></script>
+  <script type="module" src="/scripts/fetchEvent.js"></script>
+  <script type="module" src="/scripts/signin-signup.js" defer></script>
+</body>
+</html>

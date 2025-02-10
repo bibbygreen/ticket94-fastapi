@@ -22,6 +22,11 @@ psycopg2-binary = "^2.9.10"
 ruff = "^0.9.5"
 
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+ansible = "^11.2.0"
+pytest-asyncio = "^0.25.3"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

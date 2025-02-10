@@ -1,0 +1,77 @@
+*{
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+main{
+  height: 80vh;
+  
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#profile-info, #password-section {
+  margin-bottom: 20px;
+}
+
+#profile-info p, #password-section p {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+
+input{
+  width: 200px;
+  height: 40px;
+  padding: 7px;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #611da1;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #7f23d6;
+}
+
+.main-content{
+  margin-top: 50px;
+}
+
+.password-container {
+  position: relative;
+  display: inline-block;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
