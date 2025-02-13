@@ -1,0 +1,152 @@
+* {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header-container {
+  position: relative;
+}
+
+.header-img {
+  width: 80%;
+  height: auto;
+  max-height: 500px;
+  margin: auto;
+  padding-top: 140px;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+  padding: 10px 0;
+  text-align: center;
+} */
+
+.event-title {
+  margin: 0;
+  padding: 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabs {
+  height: 50px;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  background-color: #fff; 
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  line-height: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.tab {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.tab.active {
+  color: #56206c;
+  border-bottom: 5px solid #a742cf;
+}
+
+.container {
+  max-width: 1200px;
+  padding-top: 30px;
+  margin: auto;
+  padding: 20px;
+}
+
+.tab-content {
+  border: 1px solid #ddd;
+  padding: 20px 50px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.tab-content h2{
+  text-align: center;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+.buying-details {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.buying-details th,
+.buying-details td {
+  border: 1px solid #CCCCCC;
+  padding: 10px;
+  text-align: left;
+}
+
+.buying-details th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.buy-button {
+  background-color: #611da1; /* Blue background color */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.buy-button:hover {
+  background-color: #8021d9; /* Darker blue on hover */
+}
+.event-box{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  max-height: 200px;      
+  width: 380px;
+  overflow: hidden;       
+}
+.event-box img {
+  max-height: 100%;
+  display: block;
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin: auto;
+  height: auto;
+  width: auto;
+}
+
+.div-event-title {
+  font-weight: bold;
+  font-size: 16px;
+  padding: 5px;
+  word-wrap: break-word;
+}

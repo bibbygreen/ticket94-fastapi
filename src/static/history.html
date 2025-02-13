@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>訂單查詢</title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/history.css">
+    <link rel="stylesheet" href="/css/signin-signup.css">
+</head>
+<body>
+  <header>
+    <div class="navbar-container">
+      <div class="navbar">
+        <div class="headline">
+          <div>Ticket94</div>
+        </div>
+        <div class="menu">
+          <div id="signin-link" class="menu-item">會員登入</div>
+          <div id="profile-dropdown" class="menu-item profile-dropdown" style="display: none;">
+            會員中心
+            <div class="dropdown-content" style="display: none;">
+              <a href="/profile">個人資料</a>
+              <a href="/history">訂單查詢</a>
+            </div>
+          </div>
+          <div id="logout-link" class="menu-item" style="display: none;">會員登出</div>
+        </div>
+      </div>     
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <h2>訂單查詢</h2>
+      
+      <div id="order-history-container"></div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-text">- ticket just for fun -</div>
+  </footer>
+  <div id="toast" class="toast"></div>
+
+  <script type="module" src="/scripts/history.js"></script>
+  <script type="module" src="/scripts/signin-signup.js" defer></script>
+
+</body>
+</html>

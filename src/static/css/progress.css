@@ -1,0 +1,83 @@
+@import url('../../node_modules/@fortawesome/fontawesome-free/css/all.min.css');
+
+.purchaseProgress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin:auto;
+  max-width: 1200px;
+  padding-top: 10px;
+}
+
+.purchaseProgress .progress-track {
+  position: absolute;
+  top: 58px;
+  left: calc(10% + 15px);
+  right: calc(10% + 15px); 
+  height: 5px;
+  background-color: #c8c8c8;
+  z-index: -1;
+  overflow: hidden; 
+}
+
+.purchaseProgress .progress-track .progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #026CDF; 
+  transition: width 0.3s ease; 
+}
+
+.purchaseProgress .progress-step {
+  position: relative;
+  width: 20%;
+  text-align: center;
+  font-size: 14px;
+  padding-top: 35px;
+  font-weight: bold;
+  color: #c8c8c8;
+}
+
+.purchaseProgress .progress-step:before {
+  content: " ";
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  align-items: center;
+  justify-content: center;
+  background: #c8c8c8;
+  border: 2px solid #c8c8c8;
+  color: #fff;
+}
+
+.purchaseProgress .progress-step.active:before {
+  background: linear-gradient(90deg, #c36cfd, #085cb6 );
+  border: none;
+  color: #fff;
+}
+
+.purchaseProgress .progress-step.completed:before {
+  font-family: "FontAwesome";
+  content: "\f00c";
+  background: linear-gradient(90deg, #c36cfd, #085cb6);
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.purchaseProgress .progress-step:not(.completed):not(.active):before {
+  background: #c8c8c8;
+  border: 2px solid #c8c8c8;
+}
+
+.purchaseProgress .progress-step.completed {
+  color: #6e2985; /* 已完成的步驟文字顏色變深 */
+}
+
+.purchaseProgress .progress-step.active {
+  color: #6e2985; /* 當前步驟的文字顏色變深 */
+}
