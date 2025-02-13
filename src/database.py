@@ -1,6 +1,5 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.exc import OperationalError
 
 from alembic import command
 from alembic.config import Config
@@ -14,14 +13,6 @@ else:
     )
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-try:
-    # 嘗試執行一個簡單的查詢來檢查連接
-    with engine.connect() as connection:
-        result = connection.execute("SELECT 1")
-        print("Database connection successful!")
-except OperationalError as e:
-    print(f"Error: Unable to connect to the database. {e}")
 
 
 def get_db_session():
