@@ -20,6 +20,8 @@ pydantic-settings = "^2.7.1"
 better-exceptions = "^0.3.3"
 psycopg2-binary = "^2.9.10"
 ruff = "^0.9.5"
+python-multipart = "^0.0.20"
+structlog = "^25.1.0"
 
 
 [tool.poetry.group.dev.dependencies]

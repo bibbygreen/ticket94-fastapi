@@ -23,7 +23,7 @@ class OAuth2PasswordBearerWithAccount(OAuth2PasswordBearer):
         return param
 
 
-oauth2_scheme = OAuth2PasswordBearerWithAccount(tokenUrl="login")
+oauth2_scheme = OAuth2PasswordBearerWithAccount(tokenUrl="/auth/signin")
 
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
