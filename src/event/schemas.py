@@ -77,3 +77,12 @@ class GetEventByIdResponse(BaseModel):
             ]
         }
     }
+
+
+class GetEventListResponse(BaseModel):
+    event_id: int
+    event_name: str
+    date: str
+    time: str
+    location: str
+    pic: str | None

@@ -3,9 +3,11 @@ from sqlalchemy.orm import Session
 from sqlalchemy.exc import SQLAlchemyError
 from fastapi import HTTPException, status
 
+from src.schemas import ListDataResponse
 from src.event.schemas import (
     CreateEventRequest,
     GetEventByIdResponse,
+    GetEventListResponse,
 )
 from src.models import Event
 
@@ -73,6 +75,40 @@ def delete_event_by_id(event_id: int, session: Session):
             )
 
         session.commit()
+
+    except SQLAlchemyError as e:
+        session.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e)
+        ) from e
+
+
+def get_event_list(session: Session) -> ListDataResponse[GetEventListResponse]:
+    try:
+        stmt = select(
+            Event.event_id,
+            Event.event_name,
+            Event.date,
+            Event.time,
+            Event.location,
+            Event.pic,
+        ).where(not Event.is_deleted)
+
+        result = session.execute(stmt).all()
+
+        event_list = [
+            GetEventListResponse(
+                event_id=event.event_id,
+                event_name=event.event_name,
+                date=event.date,
+                time=event.time,
+                location=event.location,
+                pic=event.pic,
+            )
+            for event in result
+        ]
+
+        return ListDataResponse[GetEventListResponse](data=event_list)
 
     except SQLAlchemyError as e:
         session.rollback()
