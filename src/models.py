@@ -33,6 +33,7 @@ class Event(Base):
     price: Mapped[str] = mapped_column(Text, nullable=False)
     pic: Mapped[str] = mapped_column(String(500), nullable=True)
     category: Mapped[str] = mapped_column(String(50), nullable=False)
+    is_deleted: Mapped[bool] = mapped_column(Boolean, default=False)
     created_at: Mapped[datetime] = mapped_column(server_default=func.now())
     updated_at: Mapped[datetime] = mapped_column(
         server_default=func.now(), onupdate=func.now()
