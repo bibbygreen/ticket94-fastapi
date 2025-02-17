@@ -1,4 +1,3 @@
-
 from sqlalchemy import insert
 from sqlalchemy.orm import Session
 
