@@ -1,4 +1,4 @@
-from sqlalchemy import insert, select
+from sqlalchemy import insert, select, update
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import SQLAlchemyError
 from fastapi import HTTPException, status
@@ -52,6 +52,27 @@ def get_event_by_id(event_id: int, session: Session) -> GetEventByIdResponse:
             )
 
         return event
+
+    except SQLAlchemyError as e:
+        session.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e)
+        ) from e
+
+
+def delete_event_by_id(event_id: int, session: Session):
+    try:
+        stmt = update(Event).where(Event.event_id == event_id).values(is_deleted=True)
+
+        result = session.execute(stmt)
+
+        if result.rowcount == 0:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Event with ID {event_id} not found",
+            )
+
+        session.commit()
 
     except SQLAlchemyError as e:
         session.rollback()
