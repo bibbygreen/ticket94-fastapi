@@ -1,8 +1,12 @@
-from sqlalchemy import insert
+from sqlalchemy import insert, select
 from sqlalchemy.orm import Session
+from sqlalchemy.exc import SQLAlchemyError
+from fastapi import HTTPException, status
 
-from src.event.schemas import CreateEventRequest
-
+from src.event.schemas import (
+    CreateEventRequest,
+    GetEventByIdResponse,
+)
 from src.models import Event
 
 
@@ -33,3 +37,24 @@ def create_event(event: CreateEventRequest, session: Session):
     except Exception as e:
         session.rollback()
         raise e
+
+
+def get_event_by_id(event_id: int, session: Session) -> GetEventByIdResponse:
+    try:
+        event = session.execute(
+            select(Event).where(Event.event_id == event_id)
+        ).scalar_one_or_none()
+
+        if not event:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Event with ID {event_id} not found",
+            )
+
+        return event
+
+    except SQLAlchemyError as e:
+        session.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e)
+        ) from e
