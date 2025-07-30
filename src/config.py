@@ -15,6 +15,10 @@ class Settings(BaseSettings):
     PARTNER_KEY: str
     MERCHANT_ID: str
 
+    REDIS_PASSWORD: str
+    REDIS_HOST: str
+    REDIS_PORT: int
+
     model_config = SettingsConfigDict(env_file="./env/.env")
 
 
