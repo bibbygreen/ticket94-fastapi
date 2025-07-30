@@ -24,3 +24,10 @@ services:
     depends_on:
       - ticket94_fastapi_db 
 
+  ticket94_redis:
+    container_name: ticket94_redis
+    image: redis:7
+    restart: always
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--requirepass", "1234qwer"]

@@ -34,7 +34,8 @@ async def get_db_session() -> AsyncGenerator[AsyncSession, None]:
 
 async def get_redis_client() -> Redis:
     pool = ConnectionPool.from_url(
-        f"redis://{settings.REDIS_HOST}:{settings.REDIS_PORT}", decode_responses=True
+        f"redis://:{settings.REDIS_PASSWORD}@{settings.REDIS_HOST}:{settings.REDIS_PORT}",
+        decode_responses=True,
     )
 
     return Redis.from_pool(pool)
